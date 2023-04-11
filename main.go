@@ -6,7 +6,6 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"gorm.io/gorm"
 
 	AuthController "naatceeam/jwt_api/controller/auth"
 	UserController "naatceeam/jwt_api/controller/user"
@@ -14,21 +13,21 @@ import (
 	"naatceeam/jwt_api/orm"
 )
 
-// Binding from JSON
-type Register struct {
-	Username string `json:"username" binding:"required"`
-	Password string `json:"password" binding:"required"`
-	Fullname string `json:"fullname" binding:"required"`
-	Avatar   string `json:"avatar" binding:"required"`
-}
+// // Binding from JSON
+// type Register struct {
+// 	Username string `json:"username" binding:"required"`
+// 	Password string `json:"password" binding:"required"`
+// 	Fullname string `json:"fullname" binding:"required"`
+// 	Avatar   string `json:"avatar" binding:"required"`
+// }
 
-type UserLogin struct {
-	gorm.Model
-	Username string
-	Password string
-	Fullname string
-	Avatar   string
-}
+// type UserLogin struct {
+// 	gorm.Model
+// 	Username string
+// 	Password string
+// 	Fullname string
+// 	Avatar   string
+//}
 
 func main() {
 	err := godotenv.Load(".env")
